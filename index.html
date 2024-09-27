@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="crud">
+        <div class="head">
+            <h2>crud</h2>
+            <div class="toggle">
+                <input type="checkbox" id="mode-toggle">
+                <label for="mode-toggle" onclick="toggleMode()">Switch Mode</label>
+            </div>
+            <p>PRODUCT MANAGMENT SYSTEM</p>
+        </div>
+        <div class="inputs">
+            <input type="text" placeholder="title" id="title">
+            <div class="final_price">
+                <input onkeyup="getTotal()" type="number" placeholder="price" id="price">
+                <input onkeyup="getTotal()" type="number" placeholder="taxes" id="taxes">
+                <input onkeyup="getTotal()" type="number" placeholder="ads" id="ads">
+                <input onkeyup="getTotal()" type="number" placeholder="discount" id="discount">
+                <small id="total" style="color: #fff;"></small>
+            </div>
+            <input type="number" placeholder="count less than 11" id="count">
+            <input type="text" placeholder="category" id="category">
+            <button id="submit">Create</button>
+        </div>
+        <div class="outputs">
+            <div class="searchBlock">
+                <fieldset>
+                    <legend>Select a search type:</legend>
+                    <div id="options">
+                        <div>
+                            <input type="radio" id="radio_title" name="type" value="title"  onclick="getSearchMood(this.id)"/>
+                            <label for="radio_title">Title</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="radio_category" name="type" value="category" onclick="getSearchMood(this.id)"/>
+                            <label for="radio_category">Category</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="radio_total" name="type" value="total" onclick="getSearchMood(this.id)"/>
+                            <label for="radio_total">Total</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <input type="text" id="search" placeholder="Search" onkeyup="searchData(this.value)"/>
+                <!-- <div class="btnSearch">
+                    <button id="SearchTitle" onclick="SearchTitle()">Search By Title</button>
+                    <button id="SearchCategory" onclick="SearchCategory()">Search By Category</button>
+                </div> -->
+            </div>
+            <div id="deleteAll">
+                <button onclick="deleteAllProducts()">Delete All <span></span></button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>title</th>
+                        <th>price</th>
+                        <th>taxes</th>
+                        <th>ads</th>
+                        <th>discount</th>
+                        <th>total</th>
+                        <th>category</th>
+                        <th>update</th>
+                        <th>delete</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js">
+      
+    </script>
+</body>
+
+</html>
